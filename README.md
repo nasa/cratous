@@ -1,6 +1,4 @@
 # CRATOUS
-CRoss Application Translator of Operational Unmanned Systems
-
 CRoss-Application Translator for Operational Unmanned Systems
 (CRATOUS) is a software bridge that enables the communication between
 [UxAS](https://github.com/afrl-rq/OpenUxAS) and
