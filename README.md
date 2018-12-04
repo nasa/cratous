@@ -7,7 +7,7 @@ CRoss-Application Translator for Operational Unmanned Systems
 ### License and Copyright Notice
 
 The code in this repository is released under NASA's Open Source
-Agreement.  See the directory [`LICENSES`](LICENSES).
+Agreement.  See the directory [`LICENSE`](LICENSE).
 
 <pre>
 
