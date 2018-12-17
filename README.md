@@ -44,3 +44,37 @@ ANY SUCH MATTER SHALL BE THE IMMEDIATE, UNILATERAL TERMINATION OF THIS
 AGREEMENT.
 
 </pre>
+
+---
+
+## Installation Guide
+
+### Requirement installation
+
+(This was tested on an Ubuntu 32 bit system)
+
+1. Install [UxAS](https://github.com/afrl-rq/OpenUxAS) and verify it is running correctly.
+2. Switch to the ```ICAROUS_integration``` brach of UxAS and recompile UxAS.
+3. Install [ICAROUS](https://github.com/nasa/icarous) and verify it is running correctly.
+4. Switch ICAROUS over to this fork:
+```
+git remote add cratous_branch git:https://github.com/winstontssmith/icarous
+git fetch cratous_branch
+git pull cratous_branch master
+```
+
+
+### CRATOUS Installation
+1. Pull cratous into icarous/cFS/ relative to your ICAROUS installation with:
+    ```git pull github.com/nasa/cratous```
+2. Rebuild icarous from the top folder (icarous):
+
+```
+mkdir build
+cd build
+cmake ..
+make -j9 cpu1-install
+```
+
+3. At this point it should be good to run. To test, run the examples found in OpenUxAS/example/07_.../. The file runDemo.sh in each of these should run the example without any other input.
+Note: You may need to set the value in /proc/sys/fs/mqueue/max_msg to 1000 so that ICAROUS can run without sudo.
