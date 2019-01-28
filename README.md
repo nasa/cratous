@@ -56,23 +56,25 @@ AGREEMENT.
 1. Install [UxAS](https://github.com/afrl-rq/OpenUxAS) and verify it is running correctly.
 2. Switch to the ```ICAROUS_integration``` brach of UxAS and recompile UxAS.
 3. Install [ICAROUS](https://github.com/nasa/icarous) and verify it is running correctly.
-4. Switch ICAROUS over to this fork:
+4. Switch ICAROUS branch to `cratous`:
 ```
-git remote add cratous_branch git:https://github.com/winstontssmith/icarous
-git fetch cratous_branch
-git pull cratous_branch master
+git checkout cratous
 ```
 
 
 ### CRATOUS Installation
-1. Pull cratous into icarous/cFS/ relative to your ICAROUS installation with:
-    ```git pull github.com/nasa/cratous```
+1. Copy the cratous repository into the `cFS/apps` folder relative to your ICAROUS installation with:
+
+```
+git clone http://github.com/nasa/cratous cFS/apps/cratous
+```
+
 2. Rebuild icarous from the top folder (icarous):
 
 ```
 mkdir build
 cd build
-cmake ..
+cmake -DCRATOUS=ON ..
 make -j9 cpu1-install
 ```
 
