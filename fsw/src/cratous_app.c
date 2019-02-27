@@ -1166,6 +1166,10 @@ void CRATOUS_AppMain()
         //Read any messages UxAS has posted
         while(nread == max_message_length && !errno){
             nread = read(sockfd, messageBuffer, max_message_length);
+            if(nread < 0){
+                fprintf(stderr, "CRATOUS: Nonfatal: error in socket read");
+                nread = 0;
+            }
             bytesReceived += nread;
         }
         messageBuffer[bytesReceived] = '\0'; //makes sure we never segfault
